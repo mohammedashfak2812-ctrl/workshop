@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Mark Calculator & Performance Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="icon">🎓</div>
+            <h1>Student Mark Calculator</h1>
+            <p>Performance Analyzer</p>
+        </header>
+
+        <section class="input-card">
+
+            <h2>Enter Student Details</h2>
+
+            <div class="student-name">
+                <label>Student Name</label>
+                <input type="text"
+                       id="studentName"
+                       placeholder="Enter student name">
+            </div>
+
+            <div class="subjects">
+
+                <div class="subject">
+                    <label>Tamil</label>
+                    <input type="number" id="tamil"
+                           min="0" max="100"
+                           placeholder="0 - 100">
+                </div>
+
+                <div class="subject">
+                    <label>English</label>
+                    <input type="number" id="english"
+                           min="0" max="100"
+                           placeholder="0 - 100">
+                </div>
+
+                <div class="subject">
+                    <label>Mathematics</label>
+                    <input type="number" id="maths"
+                           min="0" max="100"
+                           placeholder="0 - 100">
+                </div>
+
+                <div class="subject">
+                    <label>Science</label>
+                    <input type="number" id="science"
+                           min="0" max="100"
+                           placeholder="0 - 100">
+                </div>
+
+                <div class="subject">
+                    <label>Computer Science</label>
+                    <input type="number" id="computer"
+                           min="0" max="100"
+                           placeholder="0 - 100">
+                </div>
+
+            </div>
+
+            <button class="calculate-btn"
+                    onclick="calculateResult()">
+                Calculate Result
+            </button>
+
+        </section>
+
+
+        <section id="resultSection" class="result-section">
+
+            <h2>📊 Student Result</h2>
+
+            <div class="student-result">
+                <h3 id="displayName">Student Name</h3>
+            </div>
+
+            <div class="result-cards">
+
+                <div class="result-card">
+                    <span>Total Marks</span>
+                    <strong id="totalMarks">0 / 500</strong>
+                </div>
+
+                <div class="result-card">
+                    <span>Average</span>
+                    <strong id="average">0</strong>
+                </div>
+
+                <div class="result-card">
+                    <span>Percentage</span>
+                    <strong id="percentage">0%</strong>
+                </div>
+
+                <div class="result-card">
+                    <span>Grade</span>
+                    <strong id="grade">-</strong>
+                </div>
+
+            </div>
+
+            <div class="status-box">
+                <span>Result:</span>
+                <strong id="resultStatus">-</strong>
+            </div>
+
+            <div class="analysis">
+
+                <h2>🔍 Performance Analysis</h2>
+
+                <p id="performanceLevel">
+                    Calculate your marks to see performance.
+                </p>
+
+                <div class="analysis-details">
+
+                    <div>
+                        <span>🏆 Highest Mark</span>
+                        <strong id="highestMark">-</strong>
+                    </div>
+
+                    <div>
+                        <span>📉 Lowest Mark</span>
+                        <strong id="lowestMark">-</strong>
+                    </div>
+
+                </div>
+
+                <div class="suggestion">
+                    <h3>💡 Improvement Suggestion</h3>
+                    <p id="suggestionText">
+                        Your suggestion will appear here.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
